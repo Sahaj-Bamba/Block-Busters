@@ -7,6 +7,7 @@ public class Shooting : MonoBehaviour
 
     public GameObject marble;
     public Transform shootPoint;
+    public Rigidbody shootVel;
     public Vector3 velocity;
     public float shootDelay;
     private float prevShoot = 0;
@@ -17,7 +18,7 @@ public class Shooting : MonoBehaviour
         if (Input.GetButton("Fire1") && (Time.time - prevShoot) > shootDelay)
         {
             GameObject gb = Instantiate(marble, shootPoint.position, shootPoint.rotation);
-            gb.GetComponent<Rigidbody>().velocity = velocity;
+            gb.GetComponent<Rigidbody>().velocity = velocity + shootVel.velocity;
             prevShoot = Time.time;
         }
     }
