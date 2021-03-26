@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +15,7 @@ public class MarbleDestroyer : MonoBehaviour
     {
 
         yield return new WaitForSeconds(leaveTime);
-        Destroy(gameObject);       
+        Destroy(this.gameObject);
 
     }
 

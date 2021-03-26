@@ -714,7 +714,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 50}
   m_Children: []
   m_Father: {fileID: 1434191642}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &392976464
 BoxCollider:
@@ -1388,7 +1388,7 @@ GameObject:
   - component: {fileID: 701261891}
   m_Layer: 0
   m_Name: Destroyer (1)
-  m_TagString: Untagged
+  m_TagString: BlockDestroyer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1483,7 +1483,7 @@ GameObject:
   - component: {fileID: 703607397}
   m_Layer: 0
   m_Name: Destroyer
-  m_TagString: Untagged
+  m_TagString: BlockDestroyer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2061,7 +2061,7 @@ SphereCollider:
   m_GameObject: {fileID: 1122132835}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -2283,7 +2283,7 @@ Transform:
   m_LocalScale: {x: 10, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1434191642}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1162019617
 BoxCollider:
@@ -2635,7 +2635,7 @@ BoxCollider:
   m_GameObject: {fileID: 1246382135}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -2702,7 +2702,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!1 &1304469404
 GameObject:
@@ -2942,12 +2942,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1689960262}
   - {fileID: 1858699822}
   - {fileID: 1468303508}
   - {fileID: 1856276053}
   - {fileID: 392976463}
   - {fileID: 1162019616}
-  - {fileID: 1689960262}
   - {fileID: 331198095}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -2989,7 +2989,7 @@ Transform:
   m_LocalScale: {x: 10, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1434191642}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1468303509
 BoxCollider:
@@ -3059,6 +3059,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 115440921}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1588595134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6629299128343554589, guid: 0d2b0853498f8fb498085e1122686f39,
+    type: 3}
+  m_PrefabInstance: {fileID: 1245996932}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1588595139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588595134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1ca6884ac79e94ca4d666234c28d14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1593073321
 GameObject:
   m_ObjectHideFlags: 0
@@ -3185,7 +3203,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689960261}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.55, z: -23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3193,7 +3211,7 @@ Transform:
   - {fileID: 2020007959}
   - {fileID: 1122132836}
   m_Father: {fileID: 1434191642}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1689960263
 MonoBehaviour:
@@ -3209,7 +3227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   multiplier: 0.6
   limit: 3.5
-  offset: {x: 50, y: 50.55, z: 28}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!114 &1689960264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3223,7 +3241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marble: {fileID: 5790768198856368677, guid: ca1fc6761a06a0345801169d4503570e, type: 3}
-  special: {fileID: 0}
+  special: {fileID: 5790768198856368677, guid: ca1fc6761a06a0345801169d4503570e, type: 3}
   shootPoint: {fileID: 1122132836}
   shootVel: {fileID: 1246382140}
   velocity: {x: 0, y: 0, z: 20}
@@ -3456,7 +3474,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 50}
   m_Children: []
   m_Father: {fileID: 1434191642}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1856276054
 BoxCollider:
@@ -3551,7 +3569,7 @@ Transform:
   m_LocalScale: {x: 10, y: 0.1, z: 50}
   m_Children: []
   m_Father: {fileID: 1434191642}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1858699823
 BoxCollider:
@@ -4084,7 +4102,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 2020007958}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -4224,6 +4242,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7578660494339451401, guid: 314f6c122faf39a4c92d817d119a13e7,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7859833942239661751, guid: 314f6c122faf39a4c92d817d119a13e7,
         type: 3}

@@ -17,11 +17,7 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-
-        //ply.position = offset;
-
-        Debug.Log(ply.position.x - offset.x);
-
+/*
         if (ply.position.x - offset.x > limit)
         {
             ply.position = new Vector3(limit - 0.01f + offset.x, ply.position.y, ply.position.z);
@@ -32,28 +28,25 @@ public class Movement : MonoBehaviour
             ply.position = new Vector3(-1 * limit + 0.01f + offset.x, ply.position.y, ply.position.z);
             return;
         }
+*/
 
-        Debug.Log("Hi");
+        float mobx = Input.acceleration.x * 1f;
+        float deskx = Input.GetAxis("Horizontal") * 1f;
 
-        float x = Input.acceleration.x * 1f;
-        float y = Input.GetAxis("Horizontal") * 1f;
-
-        x = (Math.Abs(x) > Math.Abs(y)) ? x : y;
-
-        /*Debug.Log(x);
-        Debug.Log(y);*/
-
+        float x = (Math.Abs(mobx) > Math.Abs(deskx)) ? mobx : deskx;
+        x *= multiplier;
         if (x >= 0.01f || x <= -0.01f)
         {
-            ply.Translate(x * multiplier, 0, 0);
+            if(Math.Abs(ply.position.x + x ) > limit)
+            {
+                ply.position = new Vector3(x > 0 ? limit : -1 * limit, ply.position.y, ply.position.z);
+            }
+            else
+            {
+                ply.Translate(x * multiplier, 0, 0);
+            }
         }
 
-    /*    if (x >= 0.01f)
-        {
-            ply.Translate(x * multiplier, 0, 0);
-        }
-        Debug.Log("x " + ply.position.x);
-    */
     }
 
 }
