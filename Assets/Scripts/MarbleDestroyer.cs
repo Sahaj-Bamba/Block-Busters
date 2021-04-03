@@ -15,7 +15,7 @@ public class MarbleDestroyer : MonoBehaviour
     {
 
         yield return new WaitForSeconds(leaveTime);
-        Destroy(this.gameObject);
+         Destroy(this.gameObject);
 
     }
 

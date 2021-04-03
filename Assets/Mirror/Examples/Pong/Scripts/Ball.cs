@@ -58,4 +58,5 @@ namespace Mirror.Examples.Pong
             }
         }
     }
+
 }
