@@ -2,21 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Mirror;
 
-public class Movement : MonoBehaviour
+public class Movement : NetworkBehaviour
 {
     public float multiplier = 0.9f;
     public float limit;
     public Vector3 offset;
     private Transform ply;
+    private Transform cameraTransform;
 
     void Start()
     {
         ply = GetComponent<Transform>();
     }
 
+    public override void OnStartAuthority()
+    {
+        cameraTransform = gameObject.transform.Find("Main Camera");
+        Debug.Log("in on start auth");
+        if (cameraTransform)
+        {
+            cameraTransform.gameObject.SetActive(true);
+        }
+    }
+
+    [Client]
     void FixedUpdate()
     {
+
+        if (!hasAuthority) { return; }
+
 /*
         if (ply.position.x - offset.x > limit)
         {
@@ -30,11 +46,20 @@ public class Movement : MonoBehaviour
         }
 */
 
+
+
+        //      reverser is used to ensure right movement for both the players
+        //      mobx is from mobile accellerometer
+        //      deskx is from desktop keyboard keys
+
         float mobx = Input.acceleration.x * 1f;
         float deskx = Input.GetAxis("Horizontal") * 1f;
-
+        float reverser = ply.rotation.y == 0 ? 1 : -1;
         float x = (Math.Abs(mobx) > Math.Abs(deskx)) ? mobx : deskx;
         x *= multiplier;
+
+
+        // this condition check is to discard simple high sensitive accellerometer input
         if (x >= 0.01f || x <= -0.01f)
         {
             if(Math.Abs(ply.position.x + x ) > limit)
@@ -43,7 +68,7 @@ public class Movement : MonoBehaviour
             }
             else
             {
-                ply.Translate(x * multiplier, 0, 0);
+                ply.Translate(x * multiplier * reverser, 0, 0);
             }
         }
 

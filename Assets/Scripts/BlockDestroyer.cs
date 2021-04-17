@@ -13,7 +13,9 @@ public class BlockDestroyer : MonoBehaviour
     {
         if (col.tag == "BlockDestroyer")
         {
-            Destroy(this.gameObject);
+            Destroy(GetComponent<Rigidbody>());
+            Destroy(GetComponent<MeshRenderer>());
+            Destroy(GetComponent<BoxCollider>());
         }
     }
 
