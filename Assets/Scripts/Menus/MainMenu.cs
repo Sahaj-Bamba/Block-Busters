@@ -44,9 +44,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Feedback");
     }
-    public void StartBugs()
+    public void StartBugReport()
     {
-        SceneManager.LoadScene("Bugs");
+        SceneManager.LoadScene("BugReport");
     }
 
     public void StartQuit()
