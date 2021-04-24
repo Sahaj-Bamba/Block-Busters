@@ -40,6 +40,14 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Credits");
     }
+    public void StartFeedback()
+    {
+        SceneManager.LoadScene("Feedback");
+    }
+    public void StartBugs()
+    {
+        SceneManager.LoadScene("Bugs");
+    }
 
     public void StartQuit()
     {
