@@ -7,6 +7,8 @@ using TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
+    [SerializeField] private GameConfig gameConfig;
+
     [SerializeField] private GameObject qualityMenu;
     [SerializeField] private GameObject gameplayMenu;
 
@@ -21,11 +23,11 @@ public class SettingsMenu : MonoBehaviour
         gameplayMenu.SetActive(true);
         qualityMenu.SetActive(false);
 
-        if (PlayerPrefs.HasKey("GamerName")) { username.text = PlayerPrefs.GetString("GamerName"); }
-        if (PlayerPrefs.HasKey("GamerControlsValue")) { controls.value = PlayerPrefs.GetInt("GamerControlsValue"); }
-        if (PlayerPrefs.HasKey("GamerVolume")) { volume.value = PlayerPrefs.GetFloat("GamerVolume"); }
-        if (PlayerPrefs.HasKey("GamerSensitivity")) { sensitivity.value = PlayerPrefs.GetFloat("GamerSensitivity"); }
-        if (PlayerPrefs.HasKey("GamerVibrations")) { vibrations.isOn = PlayerPrefs.GetInt("GamerVibrations") == 1; }
+        username.text = gameConfig.name;
+        controls.value = gameConfig.controls;
+        volume.value = gameConfig.volume;
+        sensitivity.value = gameConfig.sensitivity;
+        vibrations.isOn = gameConfig.vibrations;
 
     }
 
@@ -44,24 +46,24 @@ public class SettingsMenu : MonoBehaviour
     {
         if (string.IsNullOrWhiteSpace(username.text)) { return; }
 
-        PlayerPrefs.SetString("GamerName", username.text);
+        gameConfig.name = username.text;
     }
     public void UpdateControls()
     {
-        PlayerPrefs.SetString("GamerControlsName", controls.captionText.text);
-        PlayerPrefs.SetInt("GamerControlsValue", controls.value);
+        gameConfig.controls = controls.value;
+        gameConfig.controlsName = controls.captionText.text;
     }
     public void UpdateVolume()
     {
-        PlayerPrefs.SetFloat("GamerVolume", volume.value);
+        gameConfig.volume =  volume.value;
     }
     public void UpdateSensitivity()
     {
-        PlayerPrefs.SetFloat("GamerSensitivity", sensitivity.value);
+        gameConfig.sensitivity =  sensitivity.value;
     }
     public void UpdateVibrations()
     {
-        PlayerPrefs.SetInt("GamerVibrations", vibrations.isOn ? 1 : 0);
+        gameConfig.vibrations = vibrations.isOn;
     }
 
 }

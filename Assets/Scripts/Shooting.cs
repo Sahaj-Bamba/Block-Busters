@@ -15,6 +15,7 @@ public class Shooting : NetworkBehaviour
     private Transform shootPoint;
     private Rigidbody shootVel;
 
+
     private void Start()
     {
         var body = gameObject.transform.Find("Body");
