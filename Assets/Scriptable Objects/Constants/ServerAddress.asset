@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d0667c11ec9f9478a44fbd0a678ef5, type: 3}
   m_Name: ServerAddress
   m_EditorClassIdentifier: 
-  value: 
+  value: https://bdamanserver.sahajbamba.tech/

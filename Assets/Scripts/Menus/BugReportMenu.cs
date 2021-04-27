@@ -13,6 +13,8 @@ public class BugReportMenu : MonoBehaviour
     [SerializeField] private Button submit;
     [SerializeField] private TMP_Text result;
 
+    [SerializeField] private StringConstant serverAddress;
+
     private void Awake()
     {
         submit.interactable = false;
@@ -40,7 +42,7 @@ public class BugReportMenu : MonoBehaviour
         formData.Add(new MultipartFormDataSection("email="+email.text));
         formData.Add(new MultipartFormDataSection("content="+content.text));
 
-        UnityWebRequest www = UnityWebRequest.Post("https://bdamanserver.sahajbamba.tech/submitBugReport", formData);
+        UnityWebRequest www = UnityWebRequest.Post(serverAddress.value + "submitBugReport", formData);
         yield return www.SendWebRequest();
 
         if (www.result != UnityWebRequest.Result.Success)
