@@ -12,6 +12,12 @@ public class TrainingMenu : MonoBehaviour
     private string trainingModeName;
     private string gameModeName;
 
+    private void Start()
+    {
+        trainingMode.SetActive(true);
+        gameMode.SetActive(false);
+    }
+
     public void SetTrainingMode (string tm)
     {
         trainingModeName = tm;

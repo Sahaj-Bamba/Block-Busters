@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Flame01
   m_EditorClassIdentifier: 
   fireRate: 0
-  recoveryRate: 0
-  shootStrength: 0
-  ElementBooster: 0
-  element: {fileID: 0}
-  name: 
+  recoveryRate: 2
+  shootStrength: 1
+  ElementBooster: 1
+  element: {fileID: 11400000, guid: da7a1f6408833eb4c9d50501e4547bad, type: 2}
+  name: F021LB1

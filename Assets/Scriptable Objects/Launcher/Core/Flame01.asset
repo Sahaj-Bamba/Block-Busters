@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e98621de912bc4bb3afdda11d6a2c1, type: 3}
   m_Name: Flame01
   m_EditorClassIdentifier: 
-  fireRate: 0
-  recoveryRate: 0
+  fireRate: 1
+  recoveryRate: 3
   shootStrength: 0
   ElementBooster: 0
-  element: {fileID: 0}
-  name: 
+  element: {fileID: 11400000, guid: da7a1f6408833eb4c9d50501e4547bad, type: 2}
+  name: F130CC0

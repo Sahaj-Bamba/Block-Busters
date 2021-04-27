@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c6c047e4373f5448e07333ba732c59, type: 3}
   m_Name: Water
   m_EditorClassIdentifier: 
-  name: 
+  name: Water
