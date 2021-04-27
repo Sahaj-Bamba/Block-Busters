@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddfb1513971899249b44d8b68c54a2bd, type: 3}
+  m_Name: Blocks Destroyed
+  m_EditorClassIdentifier: 
+  key: {fileID: 11400000, guid: 0c19dfcf14048aa4ba2fe18b380e7539, type: 2}
+  value: {fileID: 11400000, guid: 36e379f9e95353e4da0a2705571ba158, type: 2}
