@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7decbde2423f63f40a9160e409958107, type: 3}
-  m_Name: Flame01
+  m_Script: {fileID: 11500000, guid: f0b5de1b8a94fdb4fb528c9425d20a16, type: 3}
+  m_Name: Water01
   m_EditorClassIdentifier: 
-  fireRate: 1
+  fireRate: 0
   recoveryRate: 2
-  shootStrength: 3
-  ElementBooster: 4
-  element: {fileID: 11400000, guid: da7a1f6408833eb4c9d50501e4547bad, type: 2}
-  name: F123TF4
+  shootStrength: 1
+  ElementBooster: 1
+  element: {fileID: 11400000, guid: 904199a4e764b5e41b6080f7509a19d8, type: 2}
+  name: W021LB1

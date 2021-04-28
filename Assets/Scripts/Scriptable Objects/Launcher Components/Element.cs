@@ -6,4 +6,9 @@ using UnityEngine;
 public class Element : ScriptableObject
 {
     [SerializeField] private new string name;
+
+    public string Name
+    {
+        get { return name; }
+    } 
 }

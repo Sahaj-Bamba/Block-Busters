@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7decbde2423f63f40a9160e409958107, type: 3}
-  m_Name: Flame01
+  m_Script: {fileID: 11500000, guid: 8354ca780a369dd4484930cf36410723, type: 3}
+  m_Name: Earth01
   m_EditorClassIdentifier: 
   fireRate: 1
   recoveryRate: 2
-  shootStrength: 3
-  ElementBooster: 4
-  element: {fileID: 11400000, guid: da7a1f6408833eb4c9d50501e4547bad, type: 2}
-  name: F123TF4
+  shootStrength: 2
+  ElementBooster: 3
+  element: {fileID: 11400000, guid: 40cb186d6de85334594e3b08f1801f4e, type: 2}
+  name: E122BB3

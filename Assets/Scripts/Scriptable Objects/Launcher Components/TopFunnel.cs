@@ -3,39 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Funnel", menuName = "Launcher/TopFunnel")]
-public class TopFunnel : ScriptableObject
+public class TopFunnel : LauncherPart
 {
-
-    [SerializeField] private int fireRate;
-    [SerializeField] private int recoveryRate;
-    [SerializeField] private int shootStrength;
-
-    [SerializeField] private int ElementBooster;
-    [SerializeField] private Element element;
-    [SerializeField] private new string name;
-
-    public string Name {
-        get { return name; }
-    }
-
-    public int FireRate
+    private void Awake()
     {
-        get { return fireRate; }
+        this.PartType = "Funnel";
     }
-
-    public int RecoveryRate
-    {
-        get { return recoveryRate; }
-    }
-
-    public int ShootStrength
-    {
-        get { return shootStrength; }
-    }
-
-    public Element GetElement
-    {
-        get { return element; }
-    }
-
 }
