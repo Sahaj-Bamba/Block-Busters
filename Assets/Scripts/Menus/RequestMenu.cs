@@ -72,11 +72,11 @@ public class RequestMenu : MonoBehaviour
                 yield break;
             }
             
-            result.text = res["message"].str;
             name.text = "";
             email.text = "";
             content.text = "";
-            
+            result.text = res["message"].str;
+
         }
 
     }

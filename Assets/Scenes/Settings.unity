@@ -2507,9 +2507,49 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5555147962112246007, guid: ca3425a9c04efac468ad651d6b5df848,
         type: 3}
+      propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555147962112246007, guid: ca3425a9c04efac468ad651d6b5df848,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555147962112246007, guid: ca3425a9c04efac468ad651d6b5df848,
+        type: 3}
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1370228913}
+    - target: {fileID: 5555147962112246007, guid: ca3425a9c04efac468ad651d6b5df848,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555147962112246007, guid: ca3425a9c04efac468ad651d6b5df848,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1370228913}
+    - target: {fileID: 5555147962112246007, guid: ca3425a9c04efac468ad651d6b5df848,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555147962112246007, guid: ca3425a9c04efac468ad651d6b5df848,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateName
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555147962112246007, guid: ca3425a9c04efac468ad651d6b5df848,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5555147962112246007, guid: ca3425a9c04efac468ad651d6b5df848,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca3425a9c04efac468ad651d6b5df848, type: 3}
 --- !u!1001 &5777264090126583824
