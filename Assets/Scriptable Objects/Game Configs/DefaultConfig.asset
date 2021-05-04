@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b71bcaa8db09d44c9ee586f9a5881ff, type: 3}
   m_Name: DefaultConfig
   m_EditorClassIdentifier: 
-  name: Gamer
+  name: {fileID: 11400000, guid: 422a25da5d91fa24e967068904e93be7, type: 2}
   controls: 0
   controlsName: Tilt / Accelerometer
   volume: 0.5

@@ -23,7 +23,7 @@ public class SettingsMenu : MonoBehaviour
         gameplayMenu.SetActive(true);
         qualityMenu.SetActive(false);
 
-        username.text = gameConfig.name;
+        username.text = gameConfig.name.value;
         controls.value = gameConfig.controls;
         volume.value = gameConfig.volume;
         sensitivity.value = gameConfig.sensitivity;
@@ -46,7 +46,7 @@ public class SettingsMenu : MonoBehaviour
     {
         if (string.IsNullOrWhiteSpace(username.text)) { return; }
 
-        gameConfig.name = username.text;
+        gameConfig.name.value = username.text;
     }
     public void UpdateControls()
     {

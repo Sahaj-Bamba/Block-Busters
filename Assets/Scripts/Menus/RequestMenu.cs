@@ -5,15 +5,18 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 using TMPro;
 
-public class FeedbackMenu : MonoBehaviour
+public class RequestMenu : MonoBehaviour
 {
+    [SerializeField] private string endPoint;
     [SerializeField] private new TMP_InputField name;
     [SerializeField] private TMP_InputField email;
     [SerializeField] private TMP_InputField content;
     [SerializeField] private Button submit;
     [SerializeField] private TMP_Text result;
 
-    [SerializeField] private StringConstant serverAddress;
+    [SerializeField] private StringReference serverAddress;
+    [SerializeField] private StringReference playerName;
+    [SerializeField] private StringReference errorMessage;
 
     private void Awake()
     {
@@ -35,27 +38,47 @@ public class FeedbackMenu : MonoBehaviour
     }
     IEnumerator SendFeedback()
     {
-        List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
+        result.text = "Loading ...";
         
-        //formData.Add(new MultipartFormDataSection("field1=foo&field2=bar"));
-        formData.Add(new MultipartFormDataSection("name="+name.text));
-        formData.Add(new MultipartFormDataSection("email="+email.text));
-        formData.Add(new MultipartFormDataSection("content="+content.text));
+        List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
 
-        UnityWebRequest www = UnityWebRequest.Post(serverAddress.value + "submitFeedback", formData);
-        yield return www.SendWebRequest();
+        JSONObject myData = new JSONObject(JSONObject.Type.OBJECT);
+        myData.AddField("name", name.text);
+        myData.AddField("email", email.text);
+        myData.AddField("content", content.text);
+        myData.AddField("username", playerName.value);
 
-        if (www.result != UnityWebRequest.Result.Success)
+        using (UnityWebRequest www = UnityWebRequest.Put(serverAddress.value + endPoint, myData.ToString()))
         {
-            result.text = www.error;
-        }
-        else
-        {
-            result.text = "Your words have been recorded in our scroll of honour. ";
+
+            www.method = UnityWebRequest.kHttpVerbPOST;
+            www.SetRequestHeader("Content-Type", "application/json");
+            www.SetRequestHeader("Accept", "application / json");
+
+            yield return www.SendWebRequest();
+
+            JSONObject res = new JSONObject(www.downloadHandler.text);
+
+            if (res["error"] && res["error"].b)
+            {
+                result.text = res["message"].str;
+                yield break;
+            }
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                result.text = errorMessage.value;
+                Debug.Log(www.error);
+                yield break;
+            }
+            
+            result.text = res["message"].str;
             name.text = "";
             email.text = "";
             content.text = "";
+            
         }
+
     }
 
     public void CheckName()

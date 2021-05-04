@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class StringConstantToTMP_text : MonoBehaviour
+public class StringReferenceToTMP_text : MonoBehaviour
 {
 
     private TMP_Text label;
-    [SerializeField] private StringConstant stringConstant;
+    [SerializeField] private StringReference stringConstant;
 
     private void Start()
     {

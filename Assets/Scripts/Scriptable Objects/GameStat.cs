@@ -5,6 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Game Stat", menuName = "Game Stat")]
 public class GameStat : ScriptableObject
 {
-    public StringConstant key;
+    public StringReference key;
     public IntReference value;
 }

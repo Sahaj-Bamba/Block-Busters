@@ -13,7 +13,7 @@ public class BugReportMenu : MonoBehaviour
     [SerializeField] private Button submit;
     [SerializeField] private TMP_Text result;
 
-    [SerializeField] private StringConstant serverAddress;
+    [SerializeField] private StringReference serverAddress;
 
     private void Awake()
     {

@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameConfig : ScriptableObject
 {
 
-    public new string name;
+    public new StringReference name;
     public int controls;
     public string controlsName;
     public float volume;
