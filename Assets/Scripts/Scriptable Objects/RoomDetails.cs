@@ -6,8 +6,15 @@ using UnityEngine;
 public class RoomDetails : ScriptableObject
 {
     public new string name;
-    public string password;
+    private string password;
     public bool isPrivate;
     public string ip;
     public int port;
+
+    public string Password
+    {
+        get { return isPrivate ? password : ""; }
+        set { password = value; }
+    }
+
 }

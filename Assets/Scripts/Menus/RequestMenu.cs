@@ -40,8 +40,6 @@ public class RequestMenu : MonoBehaviour
     {
         result.text = "Loading ...";
         
-        List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
-
         JSONObject myData = new JSONObject(JSONObject.Type.OBJECT);
         myData.AddField("name", name.text);
         myData.AddField("email", email.text);

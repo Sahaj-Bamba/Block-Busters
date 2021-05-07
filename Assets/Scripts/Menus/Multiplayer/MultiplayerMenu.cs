@@ -7,17 +7,15 @@ public class MultiplayerMenu : MonoBehaviour
 
     [SerializeField] private GameObject roomMode;
     [SerializeField] private GameObject createRoomMenu;
-    [SerializeField] private GameObject createRoomResult;
     [SerializeField] private GameObject joinRoomMenu;
-    [SerializeField] private GameObject joinRoomResult;
+    [SerializeField] private GameObject roomResult;
 
     private void Start()
     {
         roomMode.SetActive(true);
         createRoomMenu.SetActive(false);
-        createRoomResult.SetActive(false);
         joinRoomMenu.SetActive(false);
-        createRoomResult.SetActive(false);
+        roomResult.SetActive(false);
     }
 
     public void CreateRoom ()
@@ -32,33 +30,29 @@ public class MultiplayerMenu : MonoBehaviour
         joinRoomMenu.SetActive(true);
     }
 
+    public void GoBackToModeSelect ()
+    {
+        roomResult.SetActive(false);
+        roomMode.SetActive(true);
+    }
+
     public void SubmitCreateRoomDetails()
     {
         createRoomMenu.SetActive(false);
-        createRoomResult.SetActive(true);
-    }
-    public void GoBackToCreateRoomDetails()
-    {
-        createRoomResult.SetActive(false);
-        createRoomMenu.SetActive(true);
+        roomResult.SetActive(true);
+        this.GetComponentInChildren<RoomResult>().CreateRoom();
     }
 
     public void SubmitJoinRoomDetails()
     {
         joinRoomMenu.SetActive(false);
-        joinRoomResult.SetActive(true);
-    }
-    public void GoBackToJoinRoomDetails()
-    {
-        joinRoomResult.SetActive(false);
-        joinRoomMenu.SetActive(true);
+        roomResult.SetActive(true);
+        this.GetComponentInChildren<RoomResult>().JoinRoom();
     }
 
     public void AllDetailsGotNowStartGame ()
     {
         Debug.Log("Start Game");
     }
-
-
 
 }
