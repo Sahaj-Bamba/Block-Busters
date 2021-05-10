@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MarbleDestroyer : MonoBehaviour
 {
-    public float leaveTime = 5f;
+    [SerializeField] private float leaveTime = 5f;
 
     void Start()
     {
@@ -15,7 +15,7 @@ public class MarbleDestroyer : MonoBehaviour
     {
 
         yield return new WaitForSeconds(leaveTime);
-         Destroy(this.gameObject);
+        Destroy(this.gameObject);
 
     }
 

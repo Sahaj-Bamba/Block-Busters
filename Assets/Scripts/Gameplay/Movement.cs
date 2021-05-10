@@ -6,11 +6,11 @@ using Mirror;
 
 public class Movement : NetworkBehaviour
 {
-    public float multiplier = 0.9f;
-    public float limit;
-    public Vector3 offset;
-    private Transform ply;
-    private Transform cameraTransform;
+    [SerializeField] private float multiplier = 0.9f;
+    [SerializeField] public float limit;
+    [SerializeField] public Vector3 offset;
+    [SerializeField] private Transform ply;
+    [SerializeField] private Transform cameraTransform;
 
     void Start()
     {
