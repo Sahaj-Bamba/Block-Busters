@@ -17,7 +17,9 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] private Vector3 shootVelocity;
     [SerializeField] private Transform shootPoint;
     [SerializeField] private float shootDelay;
-    
+
+    [SerializeField] private GameEvent MarbleShot;
+
     private float prevShoot = 0;
 
 
@@ -60,6 +62,7 @@ public class PlayerActions : MonoBehaviour
             GameObject marb = Instantiate(marble, shootPoint.position, shootPoint.rotation);
             marb.GetComponent<Rigidbody>().velocity = shootVelocity;
             prevShoot = Time.time;
+            MarbleShot.Raise();
         }
     }
 

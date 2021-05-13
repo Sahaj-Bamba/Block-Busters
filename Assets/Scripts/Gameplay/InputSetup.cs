@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputSetup : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class InputSetup : MonoBehaviour
         switch (gameConfig.controls)
         {
             case 0:
+//                InputSystem.EnableDevice(Accelerometer.current);
                 break;
             case 1:
                 buttonPannel.SetActive(true);
