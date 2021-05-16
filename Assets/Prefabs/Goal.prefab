@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5011478569846379724}
   - component: {fileID: 7131775894832697844}
   - component: {fileID: 6800379424801795647}
-  - component: {fileID: -2467223868361585460}
+  - component: {fileID: 5434003385158518627}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Goal
@@ -113,7 +113,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-2467223868361585460
+--- !u!114 &5434003385158518627
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,6 +122,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6629299128343554589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a1ca6884ac79e94ca4d666234c28d14, type: 3}
+  m_Script: {fileID: 11500000, guid: 82713d4e5901d5845b69cd02d7625b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

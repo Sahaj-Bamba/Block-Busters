@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9d0667c11ec9f9478a44fbd0a678ef5, type: 3}
-  m_Name: Marbels Shot
+  m_Script: {fileID: 11500000, guid: 2f1ffac92488bf943abc8df78c3e9adb, type: 3}
+  m_Name: GameTime
   m_EditorClassIdentifier: 
-  value: Marbels Shot
+  value: 0

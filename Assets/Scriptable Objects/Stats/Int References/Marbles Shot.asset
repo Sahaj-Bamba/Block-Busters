@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f1ffac92488bf943abc8df78c3e9adb, type: 3}
-  m_Name: Marbels Shot
+  m_Name: Marbles Shot
   m_EditorClassIdentifier: 
   value: 0
