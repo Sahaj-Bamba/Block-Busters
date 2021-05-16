@@ -6,6 +6,42 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: 184118568e0734141903f1493bc20065
+    path: Assets/Scenes/Start.unity
+    guid: 494d744d00677b44291f0dcb7d8aa04b
+  - enabled: 1
+    path: Assets/Scenes/Updates.unity
+    guid: ad5a38bc996d7f14792babd66518cfc2
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 2954967756affa44a83908aec18af319
+  - enabled: 1
+    path: Assets/Scenes/Achievements.unity
+    guid: d9de47267a2f1c8458c15a495d233b96
+  - enabled: 1
+    path: Assets/Scenes/BugReport.unity
+    guid: 9b1976f9608ba5747a7c0fcdde92fb71
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 6ec65169efc44b8488435321c96c88d7
+  - enabled: 1
+    path: Assets/Scenes/Feedback.unity
+    guid: 1497d6d5d8cad1148bd971aa9a9cc6c4
+  - enabled: 1
+    path: Assets/Scenes/Multiplayer.unity
+    guid: edc5e69d6bd4e18449ce958a0b5a3f95
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: d648b137b19350e4b9db78d2c0776487
+  - enabled: 1
+    path: Assets/Scenes/Store.unity
+    guid: 4fd272c27567fad4a9ed98fd458a1336
+  - enabled: 1
+    path: Assets/Scenes/Training.unity
+    guid: 9e1cf2f18c3221c4cbcb9ba20f2af2fb
+  - enabled: 1
+    path: Assets/Scenes/Workshop.unity
+    guid: f66418599a718e14b9d27a7a8dd915d1
+  - enabled: 1
+    path: Assets/Scenes/Practice/PracticeBlock.unity
+    guid: e386456696790004fad361575d474a84
   m_configObjects: {}
