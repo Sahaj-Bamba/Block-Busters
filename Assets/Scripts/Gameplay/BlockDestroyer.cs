@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BlockDestroyer : MonoBehaviour
 {
-   
+
+    [SerializeField] private GameEvent destroyed;
+
     void Start()
     {
     }
@@ -16,6 +18,7 @@ public class BlockDestroyer : MonoBehaviour
             Destroy(GetComponent<Rigidbody>());
             Destroy(GetComponent<MeshRenderer>());
             Destroy(GetComponent<BoxCollider>());
+            destroyed.Raise();
         }
     }
 

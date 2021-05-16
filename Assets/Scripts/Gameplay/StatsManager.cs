@@ -6,6 +6,7 @@ using TMPro;
 public class StatsManager : MonoBehaviour
 {
     [SerializeField] IntReference marblesShot;
+    [SerializeField] IntReference marblesLeft;
     [SerializeField] IntReference time;
 
     [SerializeField] GameEvent eachSecond;
@@ -14,6 +15,7 @@ public class StatsManager : MonoBehaviour
     {
         time.value = 0;
         marblesShot.value = 0;
+        marblesLeft.value = 30;
         StartCoroutine(EachSecond());
     }
 
@@ -30,6 +32,7 @@ public class StatsManager : MonoBehaviour
     public void OnMarbleShot()
     {
         marblesShot.value++;
+        marblesLeft.value--;
     }
 
     private void OnDisable()

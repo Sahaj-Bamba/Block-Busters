@@ -6,10 +6,11 @@ using Mirror;
 public class Shooting : NetworkBehaviour
 {
 
-    public GameObject marble;
-    public GameObject special;
-    public Vector3 velocity;
-    public float shootDelay;
+    [SerializeField] private GameObject marble;
+    [SerializeField] private GameObject special;
+    [SerializeField] private Vector3 velocity;
+    [SerializeField] private float shootDelay;
+    
     private float prevShoot = 0;
 
     private Transform shootPoint;

@@ -20,6 +20,8 @@ public class PlayerActions : MonoBehaviour
 
     [SerializeField] private GameEvent MarbleShot;
 
+    [SerializeField] private IntReference marblesLeft;
+
     private float prevShoot = 0;
 
 
@@ -57,7 +59,7 @@ public class PlayerActions : MonoBehaviour
 
     public void Shot ()
     {
-        if ((Time.time - prevShoot) > shootDelay)
+        if (((Time.time - prevShoot) > shootDelay) && marblesLeft.value > 0 )
         {
             GameObject marb = Instantiate(marble, shootPoint.position, shootPoint.rotation);
             marb.GetComponent<Rigidbody>().velocity = shootVelocity;

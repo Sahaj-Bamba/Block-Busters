@@ -860,6 +860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   marblesShot: {fileID: 11400000, guid: 1c9e174b42ab120498ff4ab102ed5dd7, type: 2}
+  marblesLeft: {fileID: 11400000, guid: bb920eb31d849b34588b8fea40aaaec0, type: 2}
   time: {fileID: 11400000, guid: 05d591892bc5cbd439cbdccd4acc676c, type: 2}
   eachSecond: {fileID: 11400000, guid: 0ca295e66225fec4ba3a04279035bccc, type: 2}
 --- !u!1 &1314771205
