@@ -1888,7 +1888,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1370228912}
+      objectReference: {fileID: 1370228913}
+    - target: {fileID: 901725576458437685, guid: 21b7b49f89b24e84ba4f6e6b9e550d4c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 901725576458437685, guid: 21b7b49f89b24e84ba4f6e6b9e550d4c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 901725576458437687, guid: 21b7b49f89b24e84ba4f6e6b9e550d4c,
         type: 3}
       propertyPath: m_Name
@@ -2285,7 +2295,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1370228912}
+      objectReference: {fileID: 1370228913}
+    - target: {fileID: 3139914424554677529, guid: 91cf58949c30612448e6b0f4faa43353,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139914424554677529, guid: 91cf58949c30612448e6b0f4faa43353,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91cf58949c30612448e6b0f4faa43353, type: 3}
 --- !u!1001 &4665502001779860784

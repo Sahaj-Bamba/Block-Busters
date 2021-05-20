@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.IO;
 
 
 public class SettingsMenu : MonoBehaviour
@@ -22,6 +23,8 @@ public class SettingsMenu : MonoBehaviour
     {
         gameplayMenu.SetActive(true);
         qualityMenu.SetActive(false);
+
+        LoadSettingsData();
 
         username.text = gameConfig.name.value;
         controls.value = gameConfig.controls;
@@ -64,6 +67,57 @@ public class SettingsMenu : MonoBehaviour
     public void UpdateVibrations()
     {
         gameConfig.vibrations = vibrations.isOn;
+    }
+
+
+    private void checkOrCreate(string path)
+    {
+        if( !Directory.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
+    }
+
+    public void BackToMenu()
+    {
+        this.SaveSettingsData();    
+        this.GetComponent<MainMenu>().StartMenu();
+    }
+
+    public void Quit()
+    {
+        this.SaveSettingsData();
+        this.GetComponent<MainMenu>().StartQuit();
+    }
+
+    public void SaveSettingsData()
+    {
+        checkOrCreate(Path.Combine(Application.persistentDataPath, "GameSave"));
+
+        JSONObject myData = new JSONObject(JSONObject.Type.OBJECT);
+
+        myData.AddField("name", gameConfig.name.value);
+        myData.AddField("controls", gameConfig.controls);
+        myData.AddField("volume", gameConfig.volume);
+        myData.AddField("sensitivity", gameConfig.sensitivity);
+        myData.AddField("vibrations", gameConfig.vibrations);
+
+        File.WriteAllText(Path.Combine(Application.persistentDataPath, "GameSave", "settings.json"), myData.ToString());
+    }
+    public void LoadSettingsData()
+    {
+        checkOrCreate(Path.Combine(Application.persistentDataPath, "GameSave"));
+        
+        string data = File.ReadAllText(Path.Combine(Application.persistentDataPath, "GameSave", "settings.json"));
+
+        JSONObject myData = new JSONObject(data);
+
+        gameConfig.name.value = myData["name"].str;
+        gameConfig.controls = (int) myData["controls"].n;
+        gameConfig.volume = (int) myData["volume"].n;
+        gameConfig.sensitivity = (int) myData["sensitivity"].n;
+        gameConfig.vibrations = myData["vibrations"].b;
+
     }
 
 }
