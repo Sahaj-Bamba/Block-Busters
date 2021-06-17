@@ -20,18 +20,6 @@ public class InputManager : MonoBehaviour
         {
             playerActions.Shot();
         }
-
-
-/*      Debug.Log(value.interaction);
-        Debug.Log(value.started);
-        Debug.Log(value.action);
-        Debug.Log(value.control);
-        Debug.Log(value.duration);
-        Debug.Log(value.interaction);
-        Debug.Log(value.performed);
-        Debug.Log(value.startTime);
-        Debug.Log(value.time);
-*/  
     }
 
 }
