@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class ChatPlayerData : MonoBehaviour
 {
-    public StringReference player;
-
-    
+    public StringReference playerName;
+    public List<PlayerData> players = new List<PlayerData>();
 
 }
