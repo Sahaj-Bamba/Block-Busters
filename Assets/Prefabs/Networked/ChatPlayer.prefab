@@ -63,4 +63,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  chatClientManager: {fileID: 0}
+  player: {fileID: 11400000, guid: 422a25da5d91fa24e967068904e93be7, type: 2}
+  Players: {fileID: 11400000, guid: ae40d8fe2be49c34cab17d70d0253521, type: 2}
+  UpdatePlayer: {fileID: 11400000, guid: 4470839b3fb74824d9744d5b8a03cf0d, type: 2}

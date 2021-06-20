@@ -4,18 +4,45 @@ using UnityEngine;
 using Mirror;
 using TMPro;
 
-public struct PlayerData
-{
-    public string name;
-    public bool status;
-    public int connectionID;
-}
-
 public class ChatPlayer : NetworkBehaviour
 {
+    [SerializeField] private StringReference player;
+    [SerializeField] private ChatPlayerSet Players;
+    [SerializeField] private GameEvent UpdatePlayer;
 
-    [SerializeField] private ChatClientManager chatClientManager;
+    [SyncVar(hook = nameof(HandleDisplayNameChanged))]
+    public string playerName = "";
 
+    public override void OnStartClient()
+    {
+        base.OnStartClient();
+        Players.Add(this);
+        Debug.Log("Checking local player ");
+
+        if (isLocalPlayer)
+        {
+            Debug.Log("Is local player ");
+            SetName(player.value); }
+    }
+
+    public void HandleDisplayNameChanged(string oldValue, string newValue) => UpdateDisplay();
+
+    public void UpdateDisplay() 
+    {
+        Debug.Log("Updated");
+        UpdatePlayer.Raise();
+    }
+
+    [Command]
+    public void SetName(string name)
+    {
+        Debug.Log("Updating");
+        playerName = name;
+    }
+
+
+    /*
+    
     public override void OnStartAuthority()
     {
 
@@ -23,12 +50,6 @@ public class ChatPlayer : NetworkBehaviour
         chatClientManager = GameObject.Find("ChatManager")?.GetComponent<ChatClientManager>();
         
         CmdGetAuthority(this.chatClientManager.netIdentity);
-        
-
-        /*
-         * players.Callback += OnPlayerChange;
-         * CmdUpdateName(this.playerData.playerName.value);
-        */
     
     }
 
@@ -51,7 +72,7 @@ public class ChatPlayer : NetworkBehaviour
     }
 
 
-
+    */
     /*
     [Command]
     public void CmdUpdateName(string name)

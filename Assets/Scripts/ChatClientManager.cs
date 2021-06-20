@@ -4,8 +4,33 @@ using UnityEngine;
 using TMPro;
 using Mirror;
 
-public class ChatClientManager : NetworkBehaviour
+public class ChatClientManager : MonoBehaviour
 {
+
+    [SerializeField] private ChatPlayerSet Players;
+    [SerializeField] private List<TMP_Text> uiNames;
+
+    public void Start()
+    {
+        Players.Initialize();
+    }
+
+    public void UpdatePlayerUI()
+    {
+
+        for (int i = 0; i < Players.Count(); i++)
+        {
+            Debug.Log("Hi");
+            Debug.Log(Players.Count());
+            Debug.Log(Players.GetItem(i).playerName);
+            uiNames[i].text = Players.GetItem(i).playerName;
+        }
+
+    }
+
+
+
+    /*
     
     readonly SyncList<PlayerData> players = new SyncList<PlayerData>();
 
@@ -79,6 +104,6 @@ public class ChatClientManager : NetworkBehaviour
 
     }
     
-
+    */
 
 }
