@@ -14,20 +14,45 @@ public struct PlayerData
 public class ChatPlayer : NetworkBehaviour
 {
 
-    readonly SyncList<PlayerData> players = new SyncList<PlayerData>();
-    private ChatPlayerData playerData;
-
-    [SerializeField] private GameEvent playerUpdated;
+    [SerializeField] private ChatClientManager chatClientManager;
 
     public override void OnStartAuthority()
     {
+
         Debug.Log("chatPlayer started");
-        base.OnStartClient();
-        this.playerData = GameObject.Find("DataContainer")?.GetComponent<ChatPlayerData>();
-        players.Callback += OnPlayerChange;
-        CmdUpdateName(this.playerData.playerName.value);
+        chatClientManager = GameObject.Find("ChatManager")?.GetComponent<ChatClientManager>();
+        
+        CmdGetAuthority(this.chatClientManager.netIdentity);
+        
+
+        /*
+         * players.Callback += OnPlayerChange;
+         * CmdUpdateName(this.playerData.playerName.value);
+        */
+    
     }
 
+    [Command]
+    public void CmdGetAuthority(NetworkIdentity identity)
+    {
+        if (chatClientManager == null) { return; }
+
+        Debug.Log("Got authority of ChatClientManager");
+        identity.AssignClientAuthority(connectionToClient);
+        RpcGotAuthority();
+    }
+
+    [ClientRpc]
+    public void RpcGotAuthority()
+    {
+        if(chatClientManager == null) { return; }
+
+        chatClientManager.SetPlayer();
+    }
+
+
+
+    /*
     [Command]
     public void CmdUpdateName(string name)
     {
@@ -36,6 +61,7 @@ public class ChatPlayer : NetworkBehaviour
         playerData.connectionID = connectionToClient.connectionId;
         players.Add(playerData);
     }
+
 
     
     private void OnPlayerChange(SyncList<PlayerData>.Operation op, int index, PlayerData oldItem, PlayerData newItem)
@@ -66,4 +92,6 @@ public class ChatPlayer : NetworkBehaviour
         playerUpdated.Raise();
 
     }
+
+    */
 }

@@ -253,50 +253,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 9848807}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &250178297
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 250178298}
-  - component: {fileID: 250178299}
-  m_Layer: 0
-  m_Name: DataContainer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &250178298
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 250178297}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1287716577}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &250178299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 250178297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9812c7f32263e834282738af69385c36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerName: {fileID: 11400000, guid: 422a25da5d91fa24e967068904e93be7, type: 2}
 --- !u!1 &350770584
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,7 +912,7 @@ MonoBehaviour:
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 6817857954238728365, guid: 356af6fc495bf1740b2fceb9d9638573,
+  playerPrefab: {fileID: 6146659550020195972, guid: 356af6fc495bf1740b2fceb9d9638573,
     type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
@@ -1176,7 +1132,6 @@ Transform:
   m_Children:
   - {fileID: 1060181713}
   - {fileID: 2049718545}
-  - {fileID: 250178298}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1773,10 +1728,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abdf803b80d056e4a9abd6470143909c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   uiNames:
   - {fileID: 2079184063}
   - {fileID: 401075849}
-  chatPlayerData: {fileID: 250178299}
+  playerName: {fileID: 11400000, guid: 422a25da5d91fa24e967068904e93be7, type: 2}
 --- !u!114 &2049718547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1786,25 +1743,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2049718544}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a50d85492686cab468e801ff574a6b00, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 4470839b3fb74824d9744d5b8a03cf0d, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2049718546}
-        m_TargetAssemblyTypeName: ChatClientManager, Assembly-CSharp
-        m_MethodName: UpdatePlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  sceneId: 2640100975
+  serverOnly: 0
+  visible: 0
+  m_AssetId: 
+  hasSpawned: 0
 --- !u!1001 &2079184061
 PrefabInstance:
   m_ObjectHideFlags: 0
