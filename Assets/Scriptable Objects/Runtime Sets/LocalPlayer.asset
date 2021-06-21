@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9d0667c11ec9f9478a44fbd0a678ef5, type: 3}
-  m_Name: PlayerName
+  m_Script: {fileID: 11500000, guid: 00568f33a1def5a4d98e15285157e931, type: 3}
+  m_Name: LocalPlayer
   m_EditorClassIdentifier: 
-  value: Gamer1658

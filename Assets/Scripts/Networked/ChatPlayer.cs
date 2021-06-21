@@ -7,8 +7,10 @@ using TMPro;
 public class ChatPlayer : NetworkBehaviour
 {
     [SerializeField] private StringReference player;
-    [SerializeField] private ChatPlayerSet Players;
+    [SerializeField] private GameObjectsSet Players;
+    [SerializeField] private GameObjectsSet LocalPlayer;
     [SerializeField] private GameEvent UpdatePlayer;
+    [SerializeField] private StringGameEvent MessageReceived;
 
     [SyncVar(hook = nameof(HandleDisplayNameChanged))]
     public string playerName = "";
@@ -16,30 +18,44 @@ public class ChatPlayer : NetworkBehaviour
     public override void OnStartClient()
     {
         base.OnStartClient();
-        Players.Add(this);
-        Debug.Log("Checking local player ");
+        Players.Add(this.gameObject);
 
-        if (isLocalPlayer)
+        if (isLocalPlayer) 
         {
-            Debug.Log("Is local player ");
-            SetName(player.value); }
+            LocalPlayer.Add(this.gameObject);
+            SetName(player.value); 
+        }
     }
 
     public void HandleDisplayNameChanged(string oldValue, string newValue) => UpdateDisplay();
 
     public void UpdateDisplay() 
     {
-        Debug.Log("Updated");
         UpdatePlayer.Raise();
     }
 
     [Command]
     public void SetName(string name)
     {
-        Debug.Log("Updating");
         playerName = name;
     }
 
+    public void SendUserMessage(string message)
+    {
+        CmdSendUserMessage(playerName + " : " + message);
+    }
+
+    [Command]
+    public void CmdSendUserMessage(string message)
+    {
+        RpcSendUserMessage(message);
+    }
+
+    [ClientRpc]
+    public void RpcSendUserMessage(string message)
+    {
+        MessageReceived.Raise(message);
+    }
 
     /*
     

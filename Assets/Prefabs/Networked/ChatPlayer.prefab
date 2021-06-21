@@ -65,4 +65,7 @@ MonoBehaviour:
   syncInterval: 0.1
   player: {fileID: 11400000, guid: 422a25da5d91fa24e967068904e93be7, type: 2}
   Players: {fileID: 11400000, guid: ae40d8fe2be49c34cab17d70d0253521, type: 2}
+  LocalPlayer: {fileID: 11400000, guid: 39797685a8ff3df43885ae8ac684bb7a, type: 2}
   UpdatePlayer: {fileID: 11400000, guid: 4470839b3fb74824d9744d5b8a03cf0d, type: 2}
+  MessageReceived: {fileID: 11400000, guid: e6b9535fa249dd544b0750e0a126817b, type: 2}
+  playerName: 

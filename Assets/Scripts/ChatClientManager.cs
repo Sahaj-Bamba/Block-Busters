@@ -7,12 +7,18 @@ using Mirror;
 public class ChatClientManager : MonoBehaviour
 {
 
-    [SerializeField] private ChatPlayerSet Players;
+    [SerializeField] private GameObjectsSet Players;
+    [SerializeField] private GameObjectsSet LocalPlayer;
     [SerializeField] private List<TMP_Text> uiNames;
+
+    [SerializeField] private GameObject messageTemplate;
+    [SerializeField] private Transform messageContainer;
+    [SerializeField] private TMP_InputField messageField;
 
     public void Start()
     {
         Players.Initialize();
+        LocalPlayer.Initialize();
     }
 
     public void UpdatePlayerUI()
@@ -20,14 +26,27 @@ public class ChatClientManager : MonoBehaviour
 
         for (int i = 0; i < Players.Count(); i++)
         {
-            Debug.Log("Hi");
-            Debug.Log(Players.Count());
-            Debug.Log(Players.GetItem(i).playerName);
-            uiNames[i].text = Players.GetItem(i).playerName;
+            uiNames[i].text = Players.GetItem(i).GetComponent<ChatPlayer>()?.playerName;
         }
 
     }
 
+    public void SendUserMessage(string message)
+    {
+        if (string.IsNullOrEmpty(message)) { return; }
+        
+        messageField.text = "";
+        LocalPlayer.GetItem(0)?.GetComponent<ChatPlayer>()?.SendUserMessage(message);
+
+    }
+
+
+    public void MessageReceived(string message)
+    {
+        GameObject msg = Instantiate(messageTemplate, new Vector3(0, 0, 0), Quaternion.identity);
+        msg.GetComponent<TMP_Text>().text = message;
+        msg.GetComponent<Transform>().SetParent(messageContainer, false);
+    }
 
 
     /*

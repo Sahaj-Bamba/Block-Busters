@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "GameEvent", menuName = "Game Event")]
+[CreateAssetMenu(fileName = "GameEvent", menuName = "Game Events/Game Event")]
 public class GameEvent : ScriptableObject
 {
 
-    private List<GameEventListener> gameEventListeners = new List<GameEventListener>();
+    protected List<GameEventListener> gameEventListeners = new List<GameEventListener>();
 
-    public void Raise ()
+    
+    public virtual void Raise ()
     {
         for (int i = gameEventListeners.Count-1 ; i >= 0 ; i--)
         {

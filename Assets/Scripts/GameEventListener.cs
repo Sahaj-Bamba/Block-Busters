@@ -14,7 +14,7 @@ public class GameEventListener : MonoBehaviour
         gameEvent.RegisterListener(this);
     }
 
-    public void OnEventRaised()
+    public virtual void OnEventRaised()
     {
         Response.Invoke();
     }
