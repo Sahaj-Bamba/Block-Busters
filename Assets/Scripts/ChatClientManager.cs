@@ -46,6 +46,8 @@ public class ChatClientManager : MonoBehaviour
         GameObject msg = Instantiate(messageTemplate, new Vector3(0, 0, 0), Quaternion.identity);
         msg.GetComponent<TMP_Text>().text = message;
         msg.GetComponent<Transform>().SetParent(messageContainer, false);
+        RectTransform rect = messageContainer.gameObject.GetComponent<RectTransform>();
+        rect.anchoredPosition += 60 * (1) * Vector2.up;
     }
 
 
