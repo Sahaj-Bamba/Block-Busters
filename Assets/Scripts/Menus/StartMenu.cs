@@ -67,9 +67,9 @@ public class StartMenu : MonoBehaviour
             case 6:
                 runStateValue++;
                 PlayerPrefs.SetInt(runState.value, runStateValue);
-                SceneManager.LoadScene("TutorialBlock");
+                SceneManager.LoadScene("PracticeBlock");
                 break;
-            case 7:
+            default:
                 SceneManager.LoadScene("Updates");
                 break;
         }
